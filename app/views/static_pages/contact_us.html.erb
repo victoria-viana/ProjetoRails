@@ -2,17 +2,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | GymProject Sample App</title>
+    <title><%= yield(:title) %> | GymProject </title>
   </head>
   <body>
     <h1>Contact_Us</h1>
-    <p>
-      Get help on the Ruby on Rails Tutorial at the
-      <a href="http://www.railstutorial.org/#help">Rails Tutorial help
-      section</a>.
-      To get help on this sample app, see the
-      <a href="http://www.railstutorial.org/book"><em>Ruby on Rails
-      Tutorial</em> book</a>.
+
+<div id="contact" name="contact">
+  <div class="container">
+    <div class="row">
+      <h2 class="centered">Contate-Nos</h2>
+      <hr>
+
+    </div>
+    <div class="row">
+      <div class="col-md-7">
+   <strong>Deixe seu feedback!</strong>
+        <p> Seu Feedback é muito importante para nós e leva apenas alguns minutos... Sinta-se a vontade.</p>
+        <form id="contact" method="post" class="form" role="form">
+          <div class="row">
+            <div class="col-md-12 form-group">
+              <input class="form-control" id="name" name="name" placeholder="Name" type="text" required />
+            </div>
+            <div class="col-md-12 form-group">
+              <input class="form-control" id="email" name="email" placeholder="Email" type="email" required />
+            </div>
+    <div class="col-md-12 form-group">
+              <textarea class="form-control" id="message" name="message" placeholder="Message" rows="5"></textarea>
+              <button class="btn btn-lg pull-left" type="submit">Send Message</button>
+            </div>
+          </div>
+
+        </form>
+        <!-- form -->
+      </div>
+   <div class="col-md-5">
+
+
+   <i class="fa fa-map-marker fa-2x"></i>
+        <strong>Sugary</strong>
+  <p>Rua General Caiado de Castro, 1008<br>
+          Fortaleza, CE </p>
+
+      <br/>
+   <i class="fa fa-envelope-o fa-2x"></i>
+        <p>sugarydoces@gmail.com</p>
+
+       <br/>
+   <i class="fa fa-phone fa-2x"></i>
+        <p> (085) 99167.4729</p>
+
+   </div>
+    </div>
+    <!-- row -->
+
+  </div>
+</div>
+
     </p>
   </body>
 </html>

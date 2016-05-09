@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
+  get 'coaches/new'
+
   root 'static_pages#home'
 
   get 'static_pages/contact_us'
 
   get 'static_pages/about'
+  get 'static_pages/log_in'
+
+
 
   resources :clients
   resources :clients
