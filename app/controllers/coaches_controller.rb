@@ -10,11 +10,13 @@ class CoachesController < ApplicationController
   # GET /cloaches/2
   # GET /cloaches/2.json
   def show
+@coach = Coach.find(params[:id])
   end
 
   # GET /cloaches/new
   def new
-    @coaches = Coach.new
+    @coach = Coach.new
+
   end
 
   # GET /cloaches/2/edit

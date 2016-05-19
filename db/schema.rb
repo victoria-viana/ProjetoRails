@@ -14,12 +14,12 @@
 ActiveRecord::Schema.define(version: 20160518175637) do
 
   create_table "clients", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       limit: 80
     t.integer  "age"
     t.string   "gender"
     t.text     "adress"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
     t.integer  "coach_id"
   end
 

@@ -1,5 +1,17 @@
 <p id="notice"><%= notice %></p>
 
+<% provide(:title, @coach.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="coach_info">
+      <h1>
+        <%= gravatar_for @coach %>
+        <%= @coach.name %>
+      </h1>
+    </section>
+  </aside>
+</div>
+
 <p>
   <strong>Name:</strong>
   <%= @coach.name %>

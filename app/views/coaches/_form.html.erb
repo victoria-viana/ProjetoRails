@@ -11,20 +11,29 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br>
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf %><br>
-    <%= f.number_field  :cpf %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@coach) do |f| %>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email %>
+
+      <%= f.label :cpf %>
+      <%= f.number_field :cpf %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
   </div>
+</div>
+
+
 <% end %>
