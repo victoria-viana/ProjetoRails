@@ -1,0 +1,1 @@
+json.extract! @coach, :id, :name, :email, :cpf, :created_at, :updated_at
