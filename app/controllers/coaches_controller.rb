@@ -30,6 +30,7 @@ class CoachesController < ApplicationController
 
     respond_to do |format|
       if @coach.save
+        log_in @coach
         format.html { redirect_to @coach, notice: 'Coach was successfully created.' }
         format.json { render :show, status: :created, location: @coach }
       else
