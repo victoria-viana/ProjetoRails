@@ -15,7 +15,7 @@
   </head>
   <body>
       <header class="navbar navbar-fixed-top navbar-inverse">
-    <%= render 'layouts/header' %>
+      <%= render 'layouts/header' %>
       <div class="container">
         <%= link_to "P3 Fitness", '#', id: "logo" %>
         <nav>
@@ -23,7 +23,7 @@
             <li><%= link_to "Home",   root_path %></li>
             <li><%= link_to "About",   static_pages_about_path %> </li>
             <li><%= link_to "Contact_Us", static_pages_contact_us_path%></li>
-            <li><%= link_to "Log in", static_pages_log_in_path%> </li>
+            <li><%= link_to "Log in", coach_new_session_path %> </li>
           </ul>
         </nav>
       </div>

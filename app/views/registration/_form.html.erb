@@ -1,20 +1,7 @@
-<%= form_for(@coach) do |f| %>
-  <% if @coach.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@coach.errors.count, "error") %> prohibited this coach from being saved:</h2>
-
-      <ul>
-      <% @coach.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@coach) do |f| %>
+    <%= form_for :coach, url: '/cadastro' do |f| %>
       <%= f.label :name %>
       <%= f.text_field :name %>
 
@@ -34,6 +21,3 @@
     <% end %>
   </div>
 </div>
-
-
-<% end %>

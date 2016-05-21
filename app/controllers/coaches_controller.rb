@@ -10,13 +10,12 @@ class CoachesController < ApplicationController
   # GET /cloaches/2
   # GET /cloaches/2.json
   def show
-@coach = Coach.find(params[:id])
+    @coach = Coach.find(params[:id])
   end
 
   # GET /cloaches/new
   def new
     @coach = Coach.new
-
   end
 
   # GET /cloaches/2/edit
@@ -72,6 +71,6 @@ class CoachesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def coach_params
-      params.require(:coach).permit(:name, :email, :cpf)
+      params.require(:coach).permit(:name, :email, :cpf, :password, :password_confirmation)
     end
 end
