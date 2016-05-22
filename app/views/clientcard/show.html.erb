@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @clientcard.name %>
+</p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @clientcard.exercise %>
+</p>
+
+<p>
+  <strong>How To Do:</strong>
+  <%= @clientcard.howtodo %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @clientcard.frequency %>
+</p>
+
+<p>
+  <strong>Coach:</strong>
+  <%= @clientcard.coach %>
+</p>
+
+
+<%= link_to 'Edit', edit_clientcard_path(@clientcard) %> |
+<%= link_to 'Back', clientcards_path %>

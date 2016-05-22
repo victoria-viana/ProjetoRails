@@ -13,6 +13,11 @@ Rails.application.routes.draw do
   get 'cadastro/new' => 'registration#new', as: :coach_new_registration
   post 'cadastro' => 'registration#create'
 
+  get 'clientcard/new' => 'clientcard#new', as: :clientcard_new
+  post 'clientcard' => 'clientcard#create'
+
+
+  resources :clientcards
   resources :clients
 
   # The priority is based upon order of creation: first created -> highest priority.
