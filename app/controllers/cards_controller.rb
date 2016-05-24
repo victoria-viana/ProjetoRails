@@ -73,7 +73,7 @@ class CardsController < ApplicationController
       @client = Client.find(params[:client_id])
     end
     def load_card
-    @card = @client.cards.find(params[:id])
+      @card = @client.cards.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

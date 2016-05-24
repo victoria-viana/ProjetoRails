@@ -1,5 +1,5 @@
 class Client < ActiveRecord::Base
-  has_one :clientcard
-  has_many :coaches, through: :clientcards
+  has_one :card
+  has_many :coaches, through: :cards
 
 end
