@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Exercise:</strong>
+  <%= @card.exercise %>
+</p>
+
+<p>
+  <strong>Frequency:</strong>
+  <%= @card.frequency %>
+</p>
+
+<p>
+  <strong>HowToDo:</strong>
+  <%= @card.howtodo %>
+</p>
+
+
+<%= link_to 'Edit', edit_card_path(@card) %> |
+<%= link_to 'Back', cards_path %>

@@ -1,1 +1,0 @@
-json.extract! @clientcard, :id, :name, :exercise, :howtodo, :frequency, :coach :created_at, :updated_at
