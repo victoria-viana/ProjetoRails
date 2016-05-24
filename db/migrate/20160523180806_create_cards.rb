@@ -6,6 +6,8 @@ class CreateCards < ActiveRecord::Migration
       t.text :howtodo
 
       t.timestamps null: false
+      t.belongs_to :client
+      t.belongs_to :coach
     end
   end
 end

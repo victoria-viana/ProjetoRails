@@ -19,20 +19,9 @@ ActiveRecord::Schema.define(version: 20160523180806) do
     t.text     "howtodo"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "clientcards", force: :cascade do |t|
-    t.string   "name"
-    t.string   "exercise"
-    t.text     "howtodo"
-    t.string   "frequency"
-    t.string   "coach"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer  "client_id"
+    t.integer  "coach_id"
   end
-
-  add_index "clientcards", ["exercise"], name: "index_clientcards_on_exercise"
 
   create_table "clients", force: :cascade do |t|
     t.string   "name",       limit: 80
