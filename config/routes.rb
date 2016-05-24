@@ -13,8 +13,8 @@ Rails.application.routes.draw do
   get 'cadastro/new' => 'registration#new', as: :coach_new_registration
   post 'cadastro' => 'registration#create'
 
-resource :clients do
-    resource :cards
+resources :clients do
+  resources :cards
 end
 
 

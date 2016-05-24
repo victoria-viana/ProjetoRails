@@ -1,12 +1,11 @@
 class CardsController < ApplicationController
-  class ClientsController < ApplicationController
   before_action :logged_in_user
   before_action :set_card, only: [:show, :edit, :update, :destroy]
 
   # GET /cards
   # GET /cards.json
   def index
-    @cards = Card.all
+    @cards = @client.cards
   end
 
   # GET /cards/1
@@ -34,9 +33,8 @@ class CardsController < ApplicationController
       redirect_to client_path(@client), notice: "Item salvo!"
     else
       redirect_to new_client_card_path(@client), notice: "Falha ao salvar o item."
-
-      end
     end
+   end
   end
 
   # PATCH/PUT /cards/1
@@ -58,6 +56,7 @@ class CardsController < ApplicationController
   def destroy
     @card = @client.cards.find(params[:id])
     @card.destroy
+
     respond_to do |format|
       format.html { redirect_to clients_url, notice: 'Card was successfully destroyed.' }
       format.json { head :no_content }
@@ -66,11 +65,12 @@ class CardsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-     def set_card
-      @card = Card.find(params[:id])
-    end
+
     def load_client
       @client = Client.find(params[:client_id])
+    end
+    def set_card
+      @card = Card.find(params[:id])
     end
     def load_card
       @card = @client.cards.find(params[:id])
@@ -80,5 +80,4 @@ class CardsController < ApplicationController
     def card_params
       params.require(:card).permit(:exercise, :frequency, :howtodo)
     end
-end
 end
