@@ -1,4 +1,9 @@
-Rails.application.routes.draw do
+  Rails.application.routes.draw do
+  devise_for :administrators
+  get 'client_sessions/new'
+
+  get 'client_registration/new'
+
   get 'sessions/new'
 
   root 'static_pages#home'
@@ -12,6 +17,14 @@ Rails.application.routes.draw do
 
   get 'cadastro/new' => 'registration#new', as: :coach_new_registration
   post 'cadastro' => 'registration#create'
+
+
+  get     'clientlogin'   => 'client_sessions#new', as: :client_new_session
+  post   'clientlogin'   => 'client_sessions#create'
+  delete 'clientlogout'  => 'client_sessions#destroy'
+
+  get 'cadastrocliente/new' => 'client_registration#new', as: :client_new_registration
+  post 'cadastrocliente' => 'client_registration#create'
 
 resources :clients do
   resources :cards

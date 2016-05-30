@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_action :logged_in_user
+  before_action :logged_in_clients
   before_action :set_client, only: [:show, :edit, :update, :destroy]
 
   # GET /clients
@@ -28,15 +28,13 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(client_params)
 
-    respond_to do |format|
       if @client.save
-        format.html { redirect_to @client, notice: 'Client was successfully created.' }
-        format.json { render :show, status: :created, location: @client }
+        redirect_to @client, notice: 'O usuario foi criado com sucesso.'
+        # sign_in(@client)
+
       else
-        format.html { render :new }
-        format.json { render json: @client.errors, status: :unprocessable_entity }
+        render action: :new
       end
-    end
   end
 
   # PATCH/PUT /clients/1
@@ -71,6 +69,6 @@ class ClientsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def client_params
-      params.require(:client).permit(:name, :age, :gender, :adress)
+      params.require(:client).permit(:name, :age, :gender, :adress, :password, :password_confirmation)
     end
 end

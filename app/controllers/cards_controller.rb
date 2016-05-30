@@ -28,13 +28,11 @@ class CardsController < ApplicationController
   def create
     @card = @client.cards.new(card_params)
 
-    respond_to do |format|
       if @card.save
-      redirect_to client_path(@client), notice: "Item salvo!"
-    else
-      redirect_to new_client_card_path(@client), notice: "Falha ao salvar o item."
-    end
-   end
+        redirect_to client_path(@client), notice: "Item salvo!"
+      else
+        redirect_to new_client_card_path(@client), notice: "Falha ao salvar o item."
+      end
   end
 
   # PATCH/PUT /cards/1
@@ -81,3 +79,4 @@ class CardsController < ApplicationController
       params.require(:card).permit(:exercise, :frequency, :howtodo)
     end
 end
+

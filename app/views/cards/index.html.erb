@@ -18,9 +18,9 @@
         <td><%= card.exercise %></td>
         <td><%= card.frequency %></td>
         <td><%= card.howtodo %></td>
-        <td><%= link_to 'Show', card %></td>
-        <td><%= link_to 'Edit', edit_card_path(card) %></td>
-        <td><%= link_to 'Destroy', card, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', client_cards_path(@client,@card)%></td>
+        <td><%= link_to 'Edit', edit_client_card_path(@client, card) %></td>
+        <td><%= link_to 'Destroy', client_card_path(@client,card), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
