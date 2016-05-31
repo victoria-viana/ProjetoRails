@@ -4,7 +4,7 @@ class ClientSessionsController < ApplicationController
 
   def create
      @client = Client.find_by(email: params[:client_session][:email].downcase)
-    if client && client.authenticate(params[@client][:password])
+    if client && client.authenticate(params[:client][:password])
       # Log the user in and redirect to the user's show page.
       log_in client
       redirect_to clients_path
