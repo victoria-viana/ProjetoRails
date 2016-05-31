@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def create
      coach = Coach.find_by(email: params[:session][:email].downcase)
-    if coach && coach.authenticate(params[:client_session][:password])
+    if coach && coach.authenticate(params[:session][:password])
       # Log the user in and redirect to the user's show page.
       log_in coach
       redirect_to clients_path
